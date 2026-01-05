@@ -2,7 +2,13 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Run Python') {
             steps {
                 bat 'python demo.py'
             }
