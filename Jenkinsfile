@@ -3,21 +3,15 @@ pipeline {
 
     stages {
 
-        stage('Checkout Code') {
+        stage('Checkout') {
             steps {
                 checkout scm
             }
         }
 
-        stage('Check Python') {
+        stage('Build') {
             steps {
-                bat 'python --version'
-            }
-        }
-
-        stage('Run Python Script') {
-            steps {
-                bat 'python demo.py'
+                bat '"C:\\Users\\Personal\\AppData\\Local\\Programs\\Python\\Python314\\python.exe" demo.py'
             }
         }
     }
