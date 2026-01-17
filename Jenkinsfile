@@ -11,6 +11,7 @@ pipeline {
         stage('Build') {
             steps {
                 bat 'python demo.py'
+                
             }
         }
     }
